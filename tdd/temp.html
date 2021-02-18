@@ -1,0 +1,979 @@
+        </style>
+        <!-- forecast-map -->
+        <div class="point-forecast-map">
+         <div class="point-forecast-map-header text-center">
+          <div id="toolbar">
+           <div id="switch-basemap-container">
+            <div id="basemap-selection-form" title="Choose a Basemap">
+             <div id="basemap-menu">
+              <select autocomplete="off" id="basemap-selected" name="basemap-selected" title="Basemap Dropdown Menu">
+               <option value="none">
+                Select Basemap
+               </option>
+               <option selected="" value="topo">
+                Topographic
+               </option>
+               <option value="streets">
+                Streets
+               </option>
+               <option value="satellite">
+                Satellite
+               </option>
+               <option value="ocean">
+                Ocean
+               </option>
+              </select>
+             </div>
+            </div>
+            <div id="point-forecast-map-label">
+             Click Map For Forecast
+            </div>
+           </div>
+           <!-- //#switch-basemap-container -->
+           <div style="clear:both;">
+           </div>
+          </div>
+          <!-- //#toolbar -->
+         </div>
+         <!-- //.point-forecast-map-header -->
+         <div id="emap">
+          <noscript>
+           <center>
+            <br/>
+            <br/>
+            <b>
+             Map function requires Javascript and a compatible browser.
+            </b>
+           </center>
+          </noscript>
+          <div class="disclaimer">
+           <a href="http://www.weather.gov/disclaimer#esri">
+            Disclaimer
+           </a>
+          </div>
+         </div>
+         <!-- //#emap -->
+         <div class="point-forecast-map-footer">
+          <img alt="Map Legend" height="16" src="./images/wtf/maplegend_forecast-area.gif" width="100"/>
+         </div>
+         <!-- //.point-forecast-map-footer -->
+        </div>
+        <!-- //.point-forecast-map -->
+        <!-- //forecast-map -->
+        <!-- //openlayer map -->
+        <!-- About this Forecast -->
+        <div id="about_forecast">
+         <div class="fullRow">
+          <div class="left">
+           Point Forecast:
+          </div>
+          <div class="right">
+           North Canton OH
+           <br/>
+           40.88°N 81.41°W (Elev. 1155 ft)
+          </div>
+         </div>
+         <div class="fullRow">
+          <div class="left">
+           <a href="//www.weather.gov/glossary/index.php?word=Last+update" target="_blank">
+            Last Update
+           </a>
+           :
+          </div>
+          <div class="right">
+           6:17 am EST Feb 18, 2021
+          </div>
+         </div>
+         <div class="fullRow">
+          <div class="left">
+           <a href="//www.weather.gov/glossary/index.php?word=forecast+valid+for" target="_blank">
+            Forecast Valid
+           </a>
+           :
+          </div>
+          <div class="right">
+           8am EST Feb 18, 2021-6pm EST Feb 24, 2021
+          </div>
+         </div>
+         <div class="fullRow">
+          <div class="left">
+          </div>
+          <div class="right">
+           <a href="https://forecast.weather.gov/product.php?site=CLE&amp;issuedby=CLE&amp;product=AFD&amp;format=CI&amp;version=1&amp;glossary=1">
+            Forecast Discussion
+           </a>
+          </div>
+         </div>
+         <div class="fullRow">
+          <div class="left">
+          </div>
+          <div class="right">
+           <a href="MapClick.php?lat=40.8848&amp;lon=-81.4035&amp;unit=0&amp;lg=english&amp;FcstType=kml">
+            <img alt="Get as KML" height="17" src="/images/wtf/kml_badge.png" width="45"/>
+           </a>
+           <a href="MapClick.php?lat=40.8848&amp;lon=-81.4035&amp;unit=0&amp;lg=english&amp;FcstType=dwml">
+            <img alt="Get as XML" height="17" src="/images/wtf/xml_badge.png" width="45"/>
+           </a>
+          </div>
+         </div>
+        </div>
+        <!-- /About this Forecast -->
+       </div>
+       <!--additionalForecast-->
+       <div class="panel panel-default" id="additionalForecast">
+        <div class="panel-heading">
+         <h2 class="panel-title">
+          Additional Resources
+         </h2>
+        </div>
+        <div class="panel-body">
+         <!-- Radar & Satellite Images -->
+         <div class="subItem" id="radar">
+          <h4>
+           Radar &amp; Satellite Image
+          </h4>
+          <a href="https://radar.weather.gov/?settings=v1_eyJhZ2VuZGEiOnsiaWQiOiJsb2NhbCIsImNlbnRlciI6Wy04MS44Niw0MS40MTNdLCJ6b29tIjo3LCJmaWx0ZXIiOiJXU1ItODhEIiwibGF5ZXIiOiJicmVmX3JhdyIsInN0YXRpb24iOiJLQ0xFIiwidHJhbnNwYXJlbnQiOnRydWUsImFsZXJ0c092ZXJsYXkiOnRydWUsInN0YXRpb25JY29uc092ZXJsYXkiOnRydWV9LCJiYXNlIjoic3RhbmRhcmQiLCJjb3VudHkiOmZhbHNlLCJjd2EiOmZhbHNlLCJzdGF0ZSI6ZmFsc2UsIm1lbnUiOnRydWUsInNob3J0RnVzZWRPbmx5Ijp0cnVlfQ%3D%3D#/">
+           <img alt="Link to Local Radar Data" class="radar-thumb" src="//radar.weather.gov/ridge/lite/KCLE_0.gif" title="Link to Local Radar Data"/>
+          </a>
+          <a href="https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php">
+           <img alt="Link to Satellite Data" class="satellite-thumb" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/625x375.jpg" title="Link to Satellite Data"/>
+          </a>
+         </div>
+         <!-- /Radar & Satellite Images -->
+         <!-- Hourly Weather Forecast -->
+         <div class="subItem" id="feature">
+          <h4>
+           Hourly Weather Forecast
+          </h4>
+          <a href="MapClick.php?lat=40.8848&amp;lon=-81.4035&amp;unit=0&amp;lg=english&amp;FcstType=graphical">
+           <img class="img-responsive" src="newimages/medium/hourlyweather.png"/>
+          </a>
+         </div>
+         <!-- /Hourly Weather Forecast -->
+         <!-- NDFD -->
+         <div class="subItem" id="NDFD">
+          <h4>
+           National Digital Forecast Database
+          </h4>
+          <div class="one-sixth-first">
+           <a href="//graphical.weather.gov/sectors/eastgrtlakes.php?element=MaxT">
+            <img alt="National Digital Forecast Database Maximum Temperature Forecast" border="0" height="150" src="//graphical.weather.gov/images/thumbnail/latest_MaxMinT_eastgrtlakes_thumbnail.png" title="National Digital Forecast Database Maximum Temperature Forecast" width="147"/>
+           </a>
+           <p>
+            <a href="//graphical.weather.gov/sectors/eastgrtlakes.php?element=MaxT">
+             High Temperature
+            </a>
+           </p>
+          </div>
+          <div class="one-sixth-first">
+           <a href="//graphical.weather.gov/sectors/eastgrtlakes.php?element=Wx">
+            <img alt="National Digital Forecast Database Weather Element Forecast" border="0" height="150" src="//graphical.weather.gov/images/thumbnail/latest_Wx_eastgrtlakes_thumbnail.png" title="National Digital Forecast Database Weather Element Forecast" width="147"/>
+           </a>
+           <p>
+            <a href="//graphical.weather.gov/sectors/eastgrtlakes.php?element=Wx">
+             Chance of Precipitation
+            </a>
+           </p>
+          </div>
+         </div>
+         <!-- /NDFD -->
+        </div>
+       </div>
+       <!-- /additionalForecast -->
+      </div>
+      <!-- /col-md-4 -->
+      <!-- /right-side-data -->
+      <script language="javascript">
+       $( document ).ready(function() { load_openlayers_map('', '', '', '{"centroid_lat":"40.8848","centroid_lon":"-81.4035","lat1":"40.869","lon1":"-81.422","lat2":"40.891","lon2":"-81.419","lat3":"40.889","lon3":"-81.39","lat4":"40.867","lon4":"-81.393"}') });
+      </script>
+     </div>
+     <!-- /row  -->
+    </img>
+   </div>
+   <!-- /PageFormat-Land -->
+   <footer>
+    <div class="sitemap-content row" id="sitemap">
+     <div class="col-xs-12">
+      <div class="sitemap-columns">
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href=" http://www.nws.noaa.gov/climate/">
+          PAST WEATHER
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-1" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-1">
+         <ul class="list-unstyled">
+          <li>
+           <a href=" http://www.cpc.ncep.noaa.gov/products/MD_index.shtml">
+            Climate Monitoring
+           </a>
+          </li>
+          <li>
+           <a href="https://w2.weather.gov/climate/">
+            Past Weather
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nws.noaa.gov/climate/">
+            Monthly Temps
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nws.noaa.gov/climate/">
+            Records
+           </a>
+          </li>
+          <li>
+           <a href="https://www.esrl.noaa.gov/gmd/grad/solcalc/sunrise.html">
+            Astronomical Data
+           </a>
+          </li>
+          <li>
+           <a href="https://www.climate.gov/maps-data/dataset/past-weather-zip-code-data-table">
+            Certified Weather Data
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://alerts.weather.gov">
+          ACTIVE ALERTS
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-2" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-2">
+         <ul class="list-unstyled">
+          <li>
+           <a href=" http://alerts.weather.gov">
+            Warnings By State
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.wpc.ncep.noaa.gov/ww.shtml">
+            Excessive Rainfall and Winter Weather Forecasts
+           </a>
+          </li>
+          <li>
+           <a href="http://water.weather.gov/ahps/?current_color=flood&amp;current_type=all&amp;fcst_type=obs&amp;conus_map=d_map">
+            River Flooding
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov">
+            Latest Warnings
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.spc.noaa.gov/products/outlook/">
+            Thunderstorm/Tornado Outlook
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nhc.noaa.gov/">
+            Hurricanes
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.spc.noaa.gov/products/fire_wx/">
+            Fire Weather Outlooks
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.cpc.ncep.noaa.gov/products/stratosphere/uv_index/uv_alert.shtml">
+            UV Alerts
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.drought.gov/">
+            Drought
+           </a>
+          </li>
+          <li>
+           <a href="http://www.swpc.noaa.gov/products/alerts-watches-and-warnings">
+            Space Weather
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nws.noaa.gov/nwr/">
+            NOAA Weather Radio
+           </a>
+          </li>
+          <li>
+           <a href=" http://alerts.weather.gov/">
+            NWS CAP Feeds
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://www.weather.gov/current">
+          CURRENT CONDITIONS
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-3" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-3">
+         <ul class="list-unstyled">
+          <li>
+           <a href=" https://radar.weather.gov">
+            Radar
+           </a>
+          </li>
+          <li>
+           <a href="http://www.cpc.ncep.noaa.gov/products/monitoring_and_data/">
+            Climate Monitoring
+           </a>
+          </li>
+          <li>
+           <a href=" http://water.weather.gov/ahps/">
+            River Levels
+           </a>
+          </li>
+          <li>
+           <a href=" http://water.weather.gov/precip/">
+            Observed Precipitation
+           </a>
+          </li>
+          <li>
+           <a href="https://www.wpc.ncep.noaa.gov/sfc/sfcobs/sfcobs.shtml">
+            Surface Weather
+           </a>
+          </li>
+          <li>
+           <a href="http://www.spc.noaa.gov/obswx/maps/">
+            Upper Air
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.ndbc.noaa.gov/">
+            Marine and Buoy Reports
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nohrsc.noaa.gov/interactive/html/map.html">
+            Snow Cover
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/satellite">
+            Satellite
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.swpc.noaa.gov/">
+            Space Weather
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/pr">
+            International Observations
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://weather.gov/forecastmaps">
+          FORECAST
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-4" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-4">
+         <ul class="list-unstyled">
+          <li>
+           <a href=" http://www.weather.gov/">
+            Local Forecast
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/pr">
+            International Forecasts
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.spc.noaa.gov/">
+            Severe Weather
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.wpc.ncep.noaa.gov/">
+            Current Outlook Maps
+           </a>
+          </li>
+          <li>
+           <a href="http://www.cpc.ncep.noaa.gov/products/Drought">
+            Drought
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/fire">
+            Fire Weather
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.wpc.ncep.noaa.gov/">
+            Fronts/Precipitation Maps
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nws.noaa.gov/forecasts/graphical/">
+            Current Graphical Forecast Maps
+           </a>
+          </li>
+          <li>
+           <a href="http://water.weather.gov/ahps/forecasts.php">
+            Rivers
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/marine/">
+            Marine
+           </a>
+          </li>
+          <li>
+           <a href="https://ocean.weather.gov/marine_areas.php">
+            Offshore and High Seas
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nhc.noaa.gov/">
+            Hurricanes
+           </a>
+          </li>
+          <li>
+           <a href=" http://aviationweather.gov">
+            Aviation Weather
+           </a>
+          </li>
+          <li>
+           <a href="http://www.cpc.ncep.noaa.gov/products/OUTLOOKS_index.shtml">
+            Climatic Outlook
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://www.weather.gov/informationcenter">
+          INFORMATION CENTER
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-5" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-5">
+         <ul class="list-unstyled">
+          <li>
+           <a href=" http://www.spaceweather.gov">
+            Space Weather
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/briefing/">
+            Daily Briefing
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nws.noaa.gov/om/marine/home.htm">
+            Marine
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nws.noaa.gov/climate">
+            Climate
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/fire">
+            Fire Weather
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.aviationweather.gov/">
+            Aviation
+           </a>
+          </li>
+          <li>
+           <a href="http://mag.ncep.noaa.gov/">
+            Forecast Models
+           </a>
+          </li>
+          <li>
+           <a href="http://water.weather.gov/ahps/">
+            Water
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/gis/">
+            GIS
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nws.noaa.gov/om/coop/">
+            Cooperative Observers
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/skywarn/">
+            Storm Spotters
+           </a>
+          </li>
+          <li>
+           <a href="http://www.tsunami.gov">
+            Tsunami Warning System
+           </a>
+          </li>
+          <li>
+           <a href="http://water.noaa.gov/">
+            National Water Center
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/pr">
+            International Weather
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://weather.gov/safety">
+          WEATHER SAFETY
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-6" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-6">
+         <ul class="list-unstyled">
+          <li>
+           <a href="http://www.weather.gov/nwr/">
+            NOAA Weather Radio
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/stormready/">
+            StormReady
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nws.noaa.gov/om/heat/index.shtml">
+            Heat
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/safety/lightning">
+            Lightning
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.nhc.noaa.gov/prepare/">
+            Hurricanes
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nws.noaa.gov/om/thunderstorm/">
+            Thunderstorms
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/safety/tornado">
+            Tornadoes
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/safety/ripcurrent">
+            Rip Currents
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/safety/flood">
+            Floods
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/safety/tsunami">
+            Tsunamis
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/tsunamiready/">
+            TsunamiReady
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/om/winter/index.shtml">
+            Winter Weather
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nws.noaa.gov/om/heat/uv.shtml">
+            Ultra Violet Radiation
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/airquality/">
+            Air Quality
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/om/hazstats.shtml">
+            Damage/Fatality/Injury Statistics
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.redcross.org/">
+            Red Cross
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.fema.gov/">
+            Federal Emergency Management Agency (FEMA)
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/om/brochures.shtml">
+            Brochures
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nws.noaa.gov/os/marine/safeboating/">
+            Safe Boating
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://weather.gov/news">
+          NEWS
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-7" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-7">
+         <ul class="list-unstyled">
+          <li>
+           <a href=" http://weather.gov/news">
+            Newsroom
+           </a>
+          </li>
+          <li>
+           <a href=" http://weather.gov/socialmedia">
+            Social Media
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nws.noaa.gov/com/weatherreadynation/calendar.html">
+            Events
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/om/brochures.shtml">
+            Pubs/Brochures/Booklets
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://weather.gov/owlie">
+          EDUCATION
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-8" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-8">
+         <ul class="list-unstyled">
+          <li>
+           <a href="http://weather.gov/education">
+            NWS Education Home
+           </a>
+          </li>
+          <li>
+           <a href="http://www.nws.noaa.gov/com/weatherreadynation/force.html">
+            Be A Force of Nature
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.education.noaa.gov/Weather_and_Atmosphere/">
+            NOAA Education Resources
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/glossary/">
+            Glossary
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/jetstream/">
+            JetStream
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/training/">
+            NWS Training Portal
+           </a>
+          </li>
+          <li>
+           <a href="https://library.noaa.gov/">
+            NOAA Library
+           </a>
+          </li>
+          <li>
+           <a href="http://weather.gov/owlie">
+            For Students, Parents and Teachers
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/owlie/publication_brochures">
+            Brochures
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sitemap-section">
+        <div class="panel-heading">
+         <a class="sitemap-section-heading" href="http://weather.gov/about">
+          ABOUT
+         </a>
+         <button class="menu-toggle pull-right" data-target="#sitemap-9" data-toggle="collapse" type="button">
+          <span class="sr-only">
+           Toggle menu
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+         </button>
+        </div>
+        <div class="sitemap-section-body panel-body collapsable collapse" id="sitemap-9">
+         <ul class="list-unstyled">
+          <li>
+           <a href="http://weather.gov/organization">
+            Organization
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/media/wrn/NWS_Weather-Ready-Nation_Strategic_Plan_2019-2022.pdf">
+            Strategic Plan
+           </a>
+          </li>
+          <li>
+           <a href="https://sites.google.com/a/noaa.gov/nws-best-practices/">
+            For NWS Employees
+           </a>
+          </li>
+          <li>
+           <a href="https://www.weather.gov/international/">
+            International
+           </a>
+          </li>
+          <li>
+           <a href="http://www.ncep.noaa.gov/">
+            National Centers
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/tg/">
+            Products and Services
+           </a>
+          </li>
+          <li>
+           <a href="http://www.weather.gov/careers/">
+            Careers
+           </a>
+          </li>
+          <li>
+           <a href=" http://www.weather.gov/glossary/">
+            Glossary
+           </a>
+          </li>
+          <li>
+           <a href="http://weather.gov/contact">
+            Contact Us
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- legal footer area -->
+    <div class="footer-legal">
+     <div class="col-xs-12 col-sm-2 col-md-2" id="footerLogo">
+      <a href="http://www.usa.gov">
+       <img alt="usa.gov" height="30" src="/css/images/usa_gov.png" width="110"/>
+      </a>
+     </div>
+     <div class="col-xs-12 col-sm-4 col-md-4">
+      <ul class="list-unstyled footer-legal-content">
+       <li>
+        <a href="http://www.commerce.gov">
+         US Dept of Commerce
+        </a>
+       </li>
+       <li>
+        <a href="http://www.noaa.gov">
+         National Oceanic and Atmospheric Administration
+        </a>
+       </li>
+       <li>
+        <a href="http://www.weather.gov">
+         National Weather Service
+        </a>
+       </li>
+       <li>
+        <a href="https://www.weather.gov/cle">
+         Cleveland, OH
+        </a>
+       </li>
+       <li>
+        <br>
+         <a href="mailto:nwscle@noaa.gov">
+          Comments? Questions? Please Contact Us.
+         </a>
+        </br>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-12 col-sm-3 col-md-3">
+      <ul class="list-unstyled">
+       <li>
+        <a href="https://www.weather.gov/disclaimer">
+         Disclaimer
+        </a>
+       </li>
+       <li>
+        <a href="http://www.cio.noaa.gov/services_programs/info_quality.html">
+         Information Quality
+        </a>
+       </li>
+       <li>
+        <a href="https://www.weather.gov/help">
+         Help
+        </a>
+       </li>
+       <li>
+        <a href="http://www.weather.gov/glossary">
+         Glossary
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-xs-12 col-sm-3 col-md-3">
+      <ul class="list-unstyled">
+       <li>
+        <a href="https://www.weather.gov/privacy">
+         Privacy Policy
+        </a>
+       </li>
+       <li>
+        <a href="https://www.noaa.gov/foia-freedom-of-information-act">
+         Freedom of Information Act (FOIA)
+        </a>
+       </li>
+       <li>
+        <a href="https://www.weather.gov/about">
+         About Us
+        </a>
+       </li>
+       <li>
+        <a href="https://www.weather.gov/careers">
+         Career Opportunities
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </footer>
+  </main>
+ </body>
+</html>
