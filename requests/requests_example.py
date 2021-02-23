@@ -1,49 +1,54 @@
 import requests
 
-# result = requests.get("http://docs.python.org")
-# print(result.status_code)
-# assert result.status_code == 200 
-# print(result.text)
-# assert "Copyright" in result.text
-
 from bs4 import BeautifulSoup
 
-def get_temp_at_walsh():
-    result = requests.get("https://forecast.weather.gov/MapClick.php?textField1=40.8848&textField2=-81.4035#.YCvTfRNKhTY")
-    # print(result.status_code)
+def test_python_org_has_copyright():
+    result = requests.get("http://python.org")
     assert result.status_code == 200 
-    # print(result.text)
-    lines = result.text.split("\n")
-    temp = ""
-    for line in lines:
-        if "myforecast-current-lrg" in line:
-            for c in line:
-                if c.isdigit():
-                    temp = temp + c
-    return temp
+    assert "Copyright" in result.text
 
-def get_temp_at_walsh2():
-    result = requests.get("https://forecast.weather.gov/MapClick.php?textField1=40.8848&textField2=-81.4035#.YCvTfRNKhTY")
-    # print(result.status_code)
+def test_python_org_has_a_donate_button():
+    result = requests.get("http://python.org")
     assert result.status_code == 200 
-    print(result.text)
-    soup = BeautifulSoup(result.text, 'html.parser')
-    print(soup.prettify())
-    #temp_p = htmlparser.p["myforecast-current-lrg"]
-    #print(temp_p)
-    #return temp
-
-def get_tasks():
-    result = requests.get("http://swift-keemarcus.pythonanywhere.com")
-    # print(result.status_code)
+    page = BeautifulSoup(result.text, 'html.parser')
+    donate_button = page.find("a",class_="donate-button")
+    assert donate_button
+    assert donate_button.string == "Donate"
+  
+def test_python_org_search_for_max_returns_several_items():
+    result = requests.get("https://www.python.org/search/?q=max")
     assert result.status_code == 200 
-    print(result.text)
-    soup = BeautifulSoup(result.text, 'html.parser')
-    print(soup.prettify())
-    #temp_p = htmlparser.p["myforecast-current-lrg"]
-    #print(temp_p)
-    #return temp
+    page = BeautifulSoup(result.text, 'html.parser')
+    main_content = page.find("section",class_="main-content")
+    assert main_content, "Main content section not found"
+    list_items = main_content.find_all("li")
+    print(len(list_items))
+    assert len(list_items) > 3
+    for list_item in list_items:
+        print(list_item("p")[0].string)
+  
+def test_amazon_blender_contains_oster():
+      headers = {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
+      }
+      result = requests.get("https://www.amazon.com/s?k=blender", headers=headers)
+      print(result.status_code)
+      print(result.text)
+      assert "Oster" in result.text
+  
+# def get_tasks():
+#     result = requests.get("http://swift-keemarcus.pythonanywhere.com")
+#     # print(result.status_code)
+#     assert result.status_code == 200 
+#     print(result.text)
+#     print(soup.prettify())
+#     #temp_p = htmlparser.p["myforecast-current-lrg"]
+#     #print(temp_p)
+#     #return temp
 
-
-#print("It is ",get_temp_at_walsh2(),"degrees outside.")
-get_tasks()
+if __name__ == "__main__":
+    #test_python_org_has_copyright()
+    #test_python_org_has_a_donate_button()
+    #est_python_org_search_for_max_returns_several_items()
+    test_amazon_blender_contains_oster()
+    print("done.")
