@@ -1,0 +1,38 @@
+Feature: example random number
+
+Scenario: generate a random number
+   Given  we have loaded a random number generator
+    When  we ask for a random integer
+    Then  we get a random integer
+
+Scenario: generate a random number in a range
+   Given  we have loaded a random number generator
+    When  we ask for a random integer between 0 and 100
+    Then  we get a random integer beween 0 and 100
+
+Scenario: generate a negative random number in a range
+   Given  we have loaded a random number generator
+    When  we ask for a random integer between -100 and 0
+    Then  we get a random integer beween -100 and 0
+
+Scenario: generate a negative/positive random number in a range
+   Given  we have loaded a random number generator
+    When  we ask for a random integer between -10000 and 10000
+    Then  we get a random integer beween -10000 and 10000
+
+Scenario Outline: generate a random number in various ranges
+   Given  we have loaded a random number generator
+    When  we ask for a random integer between <low> and <high>
+    Then  we get a random integer beween <low> and <high>
+
+   Examples: Positive Integers
+   | low    | high    |
+   | 1      | 12      |
+   | 1      | 1000    |
+   | 10000  | 10009   |
+
+   Examples: Negative Integers
+   | low    | high    |
+   | -12    | -1      |
+   | -1000  | -50     |
+

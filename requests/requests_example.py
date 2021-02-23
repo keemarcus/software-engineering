@@ -47,8 +47,8 @@ def test_amazon_blender_contains_oster():
 #     #return temp
 
 if __name__ == "__main__":
-    #test_python_org_has_copyright()
-    #test_python_org_has_a_donate_button()
-    #est_python_org_search_for_max_returns_several_items()
-    test_amazon_blender_contains_oster()
+    test_python_org_has_copyright()
+    test_python_org_has_a_donate_button()
+    test_python_org_search_for_max_returns_several_items()
+    #test_amazon_blender_contains_oster()
     print("done.")
