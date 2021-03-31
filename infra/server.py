@@ -1,5 +1,6 @@
+import os
+
 from fabric import Connection
-from fabric.transfer import Transfer
 
 # class
 class Server(object):
@@ -8,11 +9,10 @@ class Server(object):
         assert type(host) is str
         assert type(user) is str
         assert type(key_filename) is str
+        assert os.path.exists(key_filename)
         self.connection = Connection(host=host,
                                      user=user,
                                      connect_kwargs={"key_filename":key_filename})
-        self.transfer = Transfer(self.connection)
-        return
 
     def run(self, command, stdin="", hide=True):
         result = self.connection.run(command, hide=hide)
@@ -25,6 +25,8 @@ class Server(object):
     def get_operating_system(self):
         stdout, _ = self.run("uname -s")
         return stdout.strip()
+
+    # apt packages
 
     def get_installed_apt_packages(self):
         stdout, _ = self.run("apt list --installed")
@@ -50,6 +52,8 @@ class Server(object):
         for package in packages:
             self.install_apt_package(package, force)
 
+    # processes
+
     def get_running_processes(self):
         stdout, _ = self.run("ps -aeo command", hide=True)
         processes = [p for p in stdout.split("\n") if p != 'COMMAND' and p != '']
@@ -57,6 +61,8 @@ class Server(object):
 
     def process_is_running(self, name):
         return any([process for process in self.get_running_processes() if name in process])
+
+    # standard tool versions
 
     def get_python3_version(self):
         stdout, _ = self.run("python3 --version", hide=True)
@@ -69,6 +75,13 @@ class Server(object):
         result = [r for r in result if r[0] in "0123456789"]
         version = '/'.join(result)
         return version
+
+    def get_git_version(self):
+        stdout, _ = self.run("git --version", hide=True)
+        version = stdout.strip().replace("git version ","")
+        return version
+
+    # pip packages
 
     def get_installed_pip3_packages(self, with_versions=False):
         stdout, _ = self.run("pip3 list --format freeze")
@@ -96,10 +109,10 @@ class Server(object):
         assert type(package) is str
         self.sudo("pip3 uninstall -y {p}".format(p=package))
 
-    def get_git_version(self):
-        stdout, _ = self.run("git --version", hide=True)
-        version = stdout.strip().replace("git version ","")
-        return version
+    def uninstall_pip3_packages(self, packages):
+        assert type(packages) is list
+        for package in packages:
+            self.uninstall_pip3_package(package)
 
 # test
 
@@ -107,7 +120,8 @@ _server = None
 
 def get_current_server():
     global _server
-    _server = _server or Server(host="3.135.18.121", user="ubuntu", key_filename="/home/greg/.ssh/lightsail-ohio.pem")
+    host = "3.139.68.103"
+    _server = _server or Server(host,"ubuntu","/home/greg/.ssh/lightsail-ohio.pem")
     return _server
 
 def test_instantiate_server():
@@ -184,6 +198,11 @@ def test_pip3_version():
     assert version.startswith("20.0")
     assert "/3.8" in version
 
+def test_get_git_version():
+    server = get_current_server()
+    version = server.get_git_version()
+    assert version.startswith("2.")
+
 def test_get_installed_pip3_packages():
     server = get_current_server()
     packages = server.get_installed_pip3_packages()
@@ -216,10 +235,14 @@ def test_uninstall_pip3_package():
     server.uninstall_pip3_package("bottle")
     assert not server.pip3_package_is_installed("bottle")
 
-def test_get_git_version():
+def test_uninstall_pip3_packages():
     server = get_current_server()
-    version = server.get_git_version()
-    assert version.startswith("2.")
+    server.install_pip3_package("bottle")
+    assert server.pip3_package_is_installed("bottle")
+    server.uninstall_pip3_packages(["bottle"])
+    assert not server.pip3_package_is_installed("bottle")
+
+
 
 # main
 if __name__ == "__main__":
@@ -236,10 +259,11 @@ if __name__ == "__main__":
     test_process_is_running(); print("pass.")
     test_python3_version(); print("pass.")
     test_pip3_version(); print("pass.")
+    test_get_git_version(); print("pass.")
     test_get_installed_pip3_packages(); print("pass.")
     test_pip3_package_is_installed(); print("pass.")
     test_install_pip3_package(); print("pass.")
     test_uninstall_pip3_package(); print("pass.")
-    test_get_git_version(); print("pass")
+    test_uninstall_pip3_packages(); print("pass.")
+
     print("done.")
-    pass

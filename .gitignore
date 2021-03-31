@@ -1,2 +1,4 @@
 .git
 *.pyc
+__*
+.pytest_cache
