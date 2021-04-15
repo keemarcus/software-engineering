@@ -120,8 +120,8 @@ _server = None
 
 def get_current_server():
     global _server
-    host = "3.139.68.103"
-    _server = _server or Server(host,"ubuntu","/home/greg/.ssh/lightsail-ohio.pem")
+    host = "3.235.134.202"
+    _server = _server or Server(host,"ubuntu","C:/Users/keema/Downloads/LightsailDefaultKey-us-east-1.pem")
     return _server
 
 def test_instantiate_server():

@@ -25,7 +25,7 @@ def install_application_source(server):
     assert version.startswith("2.")
 
     # get the source by cloning the repo
-    server.run("cd ~/projects; git clone --depth 1 https://github.com/drdelozier/swift.git")
+    server.run("cd ~/projects; git clone --depth 1 https://github.com/keemarcus/swift.git")
 
     # verify the code is there
     stdout, _ = server.run("ls ~/projects/swift")
@@ -36,7 +36,7 @@ def start_application(server):
 
 if __name__ == "__main__":
 
-    server = Server(host="3.135.237.166", user="ubuntu", key_filename="/home/greg/.ssh/lightsail-ohio.pem")
+    server = Server(host="3.235.134.202", user="ubuntu", key_filename="C:/Users/keema/Downloads/LightsailDefaultKey-us-east-1.pem")
 
     install_apt_packages(server)
     install_pip_packages(server)
