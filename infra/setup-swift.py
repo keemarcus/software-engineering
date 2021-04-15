@@ -32,6 +32,7 @@ def install_application_source(server):
     assert "swift.py" in stdout
 
 def start_application(server):
+    server.run("cd ~/projects/swift; python3 setup.py")
     server.run("cd ~/projects/swift; screen -S webapp -dm python3 swift.py")
 
 if __name__ == "__main__":
